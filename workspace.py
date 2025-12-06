@@ -29,3 +29,4 @@ for element in myList:
     print(('*' * element).center(findmaxvalue(myList)))
 
 print(Kolory[0])
+
