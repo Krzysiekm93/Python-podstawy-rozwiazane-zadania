@@ -1,25 +1,21 @@
 a = (input("Podaj kwoty po przecinku do logow z bankomatu:"))
 
-myList = map(int, a.split(', '))
-
-def generatelogs(list):
+def generate_logs(my_input):
+    int_array = list(map(int, my_input.split(",")))
     print("ATM logs:")
-    for i in list:
-        if i < 0:
-            i = abs(i)
-            print("- {}".format(i))
-        elif i > 0:
-            print("+ {}".format(i))
-        # wykluczenie 0
-        else:
-            i += 1
+    for element in int_array:
+        if int(element) < 0:
+            print(f"- {abs(element)}")
+        elif int(element) > 0:
+            print(f"+ {element}")
 
-def accbalance(list):
+def acc_balance(my_input):
+    array = (my_input.split(","))
     print("ATM balance: ")
     balance = 0
-    for element in list:
-        balance = balance + element
+    for element in array:
+        balance = balance + int(element)
     return balance
 
-generatelogs(myList)
-accbalance(myList)
+generate_logs(a)
+print(acc_balance(a))
